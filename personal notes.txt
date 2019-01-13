@@ -1,0 +1,26 @@
+Things I need to do:
+
+Verify GitHub setup
+Set up spreadsheet for organization
+Milestone: slides due Wednesday night
+Should get notes form the company on Monday ???
+get schedules and combine somehow into viewable thing (on GitHub?)
+Ssh keys?
+Setup on everybody ability to remote run code (bash script ?)
+People with windows 10 get the unix subsystem
+
+Pycharm push to git check if working/decide if we need it
+Tell all the peeps how to fucking push code and stuff to git
+Long term schedule stuff 
+
+
+
+Get in slack
+Determine if public repository is fine
+
+Python / NumPy / Matplotlib / PyAutoGUI
+TensorFlow / Keras
+Git
+Windows 10
+Graph Theory
+Machine Learning
