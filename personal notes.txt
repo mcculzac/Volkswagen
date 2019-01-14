@@ -9,6 +9,8 @@ Ssh keys?
 Setup on everybody ability to remote run code (bash script ?)
 People with windows 10 get the unix subsystem
 
+create template file for creating new code
+
 Pycharm push to git check if working/decide if we need it
 Tell all the peeps how to fucking push code and stuff to git
 Long term schedule stuff 
