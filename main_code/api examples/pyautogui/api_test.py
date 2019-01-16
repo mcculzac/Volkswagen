@@ -10,6 +10,7 @@
 ###################
 # imports
 ###################
+
 import pyautogui
 from typing import Tuple
 
@@ -34,7 +35,7 @@ def get_cursor_pos() -> Tuple[float, float]:
     :return: returns tuple of (x value, y value)
     """
 
-    cursor_x, cursor_y = pyautogui.position()
+    cursor_x, cursor_y = pyautogui.position
     return cursor_x, cursor_y
 
 
@@ -59,7 +60,6 @@ def hello_world() -> type(None):
 
 def mac_say_hello_world() -> type(None):
     """
-    UNTESTED!!!
     Opens a terminal and runs the say command and then quits out
     :return: None
     """
@@ -74,7 +74,7 @@ def mac_say_hello_world() -> type(None):
     pyautogui.PAUSE = .5
     pyautogui.typewrite('say ', interval=.25)
     hello_world()
-    pyautogui.press('enter', interval=.25)
+    pyautogui.press('enter')
 
 
 def windows_echo_hello_world() -> type(None):
@@ -101,7 +101,8 @@ def windows_echo_hello_world() -> type(None):
 
 
 def __main__():
-    windows_echo_hello_world()
+    # windows_echo_hello_world()
+    mac_say_hello_world()
 
 
 __main__()
