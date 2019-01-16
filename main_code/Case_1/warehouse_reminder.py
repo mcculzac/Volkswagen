@@ -248,7 +248,7 @@ def start_mail_server():
     server.ehlo()
     logging.info('Starting SMTP server...')
     try:
-        server.login('zam.mccullough@gmail.com', 'qzgaicjuaebedpds')
+        server.login('**************', '************')
     except Exception as e:
         logging.exception('Failed!')
         raise
