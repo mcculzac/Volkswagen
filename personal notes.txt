@@ -1,5 +1,8 @@
 Things I need to do:
 
+Everyone needs to install xlrd for python
+Everyone needs to install pyobjc for python if MAC
+
 Verify GitHub setup
 Set up spreadsheet for organization
 Milestone: slides due Wednesday night
