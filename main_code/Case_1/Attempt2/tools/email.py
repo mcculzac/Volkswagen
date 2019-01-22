@@ -9,7 +9,6 @@
 # This will hold email based api tools
 
 
-<<<<<<< HEAD
 ##########
 # import
 ##########
@@ -21,16 +20,6 @@ import pyautogui
 ############
 # functions
 ############
-=======
-
-# import
-import sys
-sys.path.insert(1, "/Users/zam/PycharmProjects/Volkswagen_git/main_code/Case_1/Attempt2/tools")
-import generic
-import pyautogui
-
-# global vars
->>>>>>> 0175285c77db5401156883bd6e631440b26aca37
 
 def mac_email():
     """
@@ -39,7 +28,6 @@ def mac_email():
     """
     pass
 
-<<<<<<< HEAD
 
 def windows_email(text: str, to: str, subject: str) -> None:
     """
@@ -79,5 +67,3 @@ def windows_email(text: str, to: str, subject: str) -> None:
     log(pyautogui.keyDown, ('ctrl'))
     log(pyautogui.press, ('enter'))
     log(pyautogui.keyUp, ('ctrl'))
-=======
->>>>>>> 0175285c77db5401156883bd6e631440b26aca37
