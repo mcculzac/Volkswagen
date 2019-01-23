@@ -100,9 +100,11 @@ def windows_echo_hello_world() -> type(None):
     pyautogui.press('enter')
 
 
+
 def __main__():
     # windows_echo_hello_world()
     mac_say_hello_world()
+
 
 
 __main__()
