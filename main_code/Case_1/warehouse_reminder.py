@@ -3,6 +3,7 @@
 # Zac McCullough
 # mccul157@msu.edu
 # 1/15
+# LEGACY
 ###################
 
 
@@ -193,98 +194,6 @@ def parse_spreadsheet(warehouse_sheet, contact_sheet, send_from_email: str, serv
             logging.exception('Error: ' + str(e) + ' was not found!')
 
     return part_list
-
-
-# def parse_spreadsheet(excel_file: pd.ExcelFile, send_from_email: str, server, DEBUG: bool=False) -> List[Part]:
-#     """
-#     Reads the pandas excel file and extracts the relevant portions to construct
-#     our list of part objects
-#     :param excel_file: pandas excel file
-#     :return: list of part
-#     """
-#
-#     # extract the sheets into separate dataframes
-#     warehouse_sheet = excel_file.parse('Warehouse')
-#     contact_sheet = excel_file.parse('Contact')
-#
-#     # var def
-#     part_col = None
-#     date_col = None
-#     amount_col = None
-#     open_col = None
-#     contact_part_id = None
-#     contact_email = None
-#
-#     # print(warehouse_sheet)
-#
-#     # separate sheet into the corresponding columns we care about
-#     for col in warehouse_sheet:
-#         for val in warehouse_sheet[col]:
-#             if val == 'Part':
-#                 part_col = warehouse_sheet[col]
-#                 break
-#             elif val == 'date':
-#                 date_col = warehouse_sheet[col]
-#                 break
-#             elif val == 'amount':
-#                 amount_col = warehouse_sheet[col]
-#                 break
-#             elif val == 'open':
-#                 open_col = warehouse_sheet[col]
-#                 break
-#
-#     # do the same as above but for the contact sheet
-#     for col in contact_sheet:
-#         for val in contact_sheet[col]:
-#             if val == 'Part-ID':
-#                 contact_part_id = contact_sheet[col]
-#                 break
-#             elif val == 'email':
-#                 contact_email = contact_sheet[col]
-#                 break
-#
-#     # find first actual part stripping out other things
-#     first_actual_val = 0
-#     part_vals = part_col.values
-#     for val in part_vals:
-#         first_actual_val += 1
-#         if val == 'Part':
-#             break
-#     # print('first_actual_val: ' + str(first_actual_val))
-#
-#     # find first actual part stripping out other things
-#     first_contact_val = 0
-#     contact_vals = contact_part_id.values
-#     for val in contact_vals:
-#         first_contact_val += 1
-#         if val == 'Part-ID':
-#             break
-#
-#     # construct a dictionary that has every part id corresponding to an email address
-#     part_to_email_dict = {}
-#     for i in range(first_contact_val, len(contact_part_id)):
-#         part_to_email_dict[contact_part_id[i]] = contact_email[i]
-#
-#     # check if debug is defined above
-#     # by doing this we make this function independent of our gloval variable
-#
-#     # if we are debugging, then set our output email to be the same as our source email.
-#     if DEBUG:
-#         keys = part_to_email_dict.keys()
-#         for key in keys:
-#             part_to_email_dict[key] = send_from_email
-#
-#     # construct our part list
-#     part_list = []
-#     for i in range(first_actual_val, len(part_col)):
-#         try:
-#             part_list.append(Part(part_col.iloc[i], date_col.iloc[i], amount_col.iloc[i], open_col.iloc[i], part_to_email_dict[part_col.iloc[i]],
-#                              send_from_email, server))
-#         except KeyError as e:
-#             print('Error: ' + str(e) + ' was not found!')
-#             logging.exception('Error: ' + str(e) + ' was not found!')
-#
-#     return part_list
 
 
 def start_mail_server():
