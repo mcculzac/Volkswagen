@@ -38,6 +38,8 @@ def windows_email(text: str, to: str, subject: str) -> None:
     :return: None
     """
 
+    pyautogui.PAUSE = .4
+
     # get to run
     log(pyautogui.keyDown, ('win'))
     log(pyautogui.press, ('r'))
@@ -45,9 +47,9 @@ def windows_email(text: str, to: str, subject: str) -> None:
 
     # open outlook
     log(pyautogui.typewrite, ('outlook'))
-    pyautogui.PAUSE = 7
+    pyautogui.PAUSE = 7  # time between starting up outlook and doing things
     log(pyautogui.press, ('enter'))
-    pyautogui.PAUSE = .5
+    pyautogui.PAUSE = .2
 
     # new mail
     log(pyautogui.keyDown, ('ctrl'))

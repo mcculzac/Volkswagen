@@ -30,5 +30,6 @@ def log(func, *args, **kwargs):
         logging.info(now() + ',' + func.__name__ + ',' + str(arg_list))
     else:
         logging.info(now() + ',' + func.__name__ + ',' + str(arg_list) + ',' + str(temp))
+    return temp
 
 
