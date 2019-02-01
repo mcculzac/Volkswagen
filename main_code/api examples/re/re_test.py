@@ -5,7 +5,7 @@
 # 1/28
 ###################
 
-"""Technology demonstrater of regex"""
+"""Technology demonstrator of regex"""
 
 ##########
 # imports

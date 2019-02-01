@@ -23,7 +23,7 @@ def connect_to_outlook() -> None:
     outlook = win32com.client.Dispatch("Outlook.Application").GetNamespace("MAPI")
 
 
-def get_all_capstone_emails(outlook) -> List:
+def get_all_emails_from(outlook, list_senders) -> List:
     inbox = outlook.GetDefaultFolder(6)
     messages = inbox.Items
     result = []
@@ -33,7 +33,7 @@ def get_all_capstone_emails(outlook) -> List:
             sender = message.SenderEmailAddress
         except AttributeError as e:
             pass
-        if sender is not None and sender.lower() in ['james.mariani4@gmail.com', 'dyksen@msu.edu', 'john3842@msu.edu']:
+        if sender is not None and sender.lower() in list_senders:
             result.append(message)
     return result
 
@@ -41,11 +41,9 @@ def get_all_capstone_emails(outlook) -> List:
 def __main__() -> None:
     outlook = win32com.client.Dispatch("Outlook.Application").GetNamespace("MAPI")
     inbox = outlook.GetDefaultFolder(6)
-    emails = get_all_capstone_emails(outlook)
+    emails = get_all_emails_from(outlook, ['zam.mccullough@gmail.com'])
     print(len(emails))
-    for email in emails:
-        print(email.body[:30])
-        print('********************')
+    print(emails[0].body)
 
 
 __main__()
