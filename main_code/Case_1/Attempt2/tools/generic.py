@@ -13,7 +13,8 @@
 import platform
 import time
 import typing
-
+import win32clipboard
+import win32com
 
 ############
 # functions
@@ -39,4 +40,13 @@ def now() -> str:
     :return: current time string
     """
     return time.strftime("%H:%M:%S", time.gmtime())
+
+
+def grab_clipboard() -> str:
+    win32clipboard.OpenClipboard()
+    data = win32clipboard.GetClipboardData(win32clipboard.CF_UNICODETEXT)
+    win32clipboard.CloseClipboard()
+    return data
+
+
 
