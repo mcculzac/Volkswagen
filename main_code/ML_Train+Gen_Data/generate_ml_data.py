@@ -4,7 +4,7 @@
 # 2/01
 ###################
 
-"""Log inputs"""
+"""generate a csv file of click streams that can be parsed for ml"""
 
 ##########
 # imports
@@ -19,7 +19,7 @@ import logging
 # Global Variables
 ###################
 
-NAME_OF_LOG_FILE = 'inputs.log'
+NAME_OF_CSV_FILE = 'data.csv'
 
 
 ######################
@@ -32,18 +32,15 @@ def on_event(args) -> None:
     :param args: our events
     :return: none
     """
-    if isinstance(args, KeyboardEvent) and args.event_type == 'key down':
-        logging.info("Key Pressed: " + str(args.current_key))
-        if args.current_key == 'Escape':
-            hook.unhook_mouse()
-            hook.unhook_keyboard()
-    elif isinstance(args, MouseEvent) and args.event_type == 'key down':
-        logging.info("Mouse: " + str(args.current_key) + " at x: " + str(args.mouse_x) + " y: " + str(args.mouse_y))
+    with open(NAME_OF_CSV_FILE, 'a') as f:
+        if isinstance(args, KeyboardEvent) and args.event_type == 'key down':
+            if args.current_key.lower() == 'return':
+                f.write('\n')
+            else:
+                f.write(str(args.current_key) + ',')
 
 
 def __main__() -> None:
-    logging.basicConfig(filename=NAME_OF_LOG_FILE, level=logging.DEBUG)
-    logging.info('\n\n')
     hook = Hook()
     hook.handler = on_event
     hook.hook(keyboard=True, mouse=True)
