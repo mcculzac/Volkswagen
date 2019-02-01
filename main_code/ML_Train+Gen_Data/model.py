@@ -34,6 +34,11 @@ KEY_TO_NUMBER = {'a': 0, 'b': 1, 'c': 2, 'd': 3, 'e': 4, 'f': 5, 'g': 6, 'h': 7,
 ######################
 
 def pre_process(file_name) -> Tuple[Any, Any, Any, Any]:
+    """
+    this takes the data in from a csv format and converts into xtrain through y test in numerical data
+    :param file_name: file name
+    :return: our xtrain, xtest, ytrain, ytest
+    """
 
     # convert csv to two dimensional list
     data = []
