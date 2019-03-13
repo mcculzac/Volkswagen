@@ -1,5 +1,5 @@
 #################
-# Kevin Gu
+# Kevin Gu & Zachary McCullough
 # Created: 2/13/2019
 #################
 
