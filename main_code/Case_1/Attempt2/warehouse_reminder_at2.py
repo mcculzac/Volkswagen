@@ -4,7 +4,7 @@
 # 2018-1-25
 #####################
 
-"""This is an attempt on the first task given"""
+"""This is an attempt on the first task given"""
 
 ##########
 # imports
