@@ -78,6 +78,7 @@ def pre_process(file_name) -> Tuple[Any, Any, Any, Any]:
 
 def __main__():
     x_train, x_test, y_train, y_test = pre_process(READ_CSV_FROM)
+
     regr = SVC(gamma='auto')
     regr.fit(x_train, y_train)
     y_pred = regr.predict(x_test)
