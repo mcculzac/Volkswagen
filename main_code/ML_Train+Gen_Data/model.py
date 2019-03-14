@@ -79,13 +79,19 @@ def pre_process(file_name) -> Tuple[Any, Any, Any, Any]:
 def __main__():
     x_train, x_test, y_train, y_test = pre_process(READ_CSV_FROM)
 
-    regr = SVC(gamma='auto')
-    regr.fit(x_train, y_train)
-    y_pred = regr.predict(x_test)
+    regr = SVC(gamma='auto') # Support Vector Classification (SVM)
+    regr.fit(x_train, y_train) # Training
+    y_pred = regr.predict(x_test) # Predict test y, output is continuous (real)
     temp = []
     for val in y_pred:
-        temp.append(round(val))
+        temp.append(round(val))  # round to intd - discrete values
     y_pred = temp
+
+    #################################
+    # MSE, Variance, & Accuracy
+    # Metrics to measure the model
+    ##################################
+
     # The mean squared error
     print("Mean squared error: %.2f"
           % mean_squared_error(y_test, y_pred))
