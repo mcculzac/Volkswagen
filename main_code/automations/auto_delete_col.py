@@ -20,6 +20,7 @@ import pyautogui
 
 """Given any column name, delete it"""
 
+
 def __main__():
     open_file_on_desktop('ex_1')
     pyautogui.PAUSE = 0.1

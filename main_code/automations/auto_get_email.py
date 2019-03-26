@@ -33,7 +33,7 @@ def __main__():
 
     repeated_press('right', 4)
 
-    pyautogui.hotkey('ctrl', 'c')
+    read_cell()
 
 
 __main__()

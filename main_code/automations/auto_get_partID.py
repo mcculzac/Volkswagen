@@ -36,7 +36,7 @@ def __main__():
 
     pyautogui.press('left')
 
-    pyautogui.hotkey('ctrl', 'c')
+    read_cell()
 
 
 __main__()

@@ -20,6 +20,7 @@ import pyautogui
 
 """Given company's name, return the partID"""
 
+
 def __main__():
     open_file_on_desktop('ex_1')
     pyautogui.PAUSE = 0.1
@@ -33,6 +34,7 @@ def __main__():
 
     pyautogui.press('right')
 
-    pyautogui.hotkey('ctrl', 'c')
+    read_cell()
+
 
 __main__()

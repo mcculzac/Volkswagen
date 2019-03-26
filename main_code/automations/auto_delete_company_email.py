@@ -18,20 +18,22 @@ import pyautogui
 # function defs
 ###############
 
-"""Given an partID, return the open amount"""
-def __main__():
+"""Given the company name, delete the contact information"""
 
+def __main__():
     open_file_on_desktop('ex_1')
     pyautogui.PAUSE = 0.1
+
+    goto_sheet('contact')
 
     pyautogui.hotkey('ctrl', 'f')
     pyautogui.hotkey('ctrl', 'v')
     pyautogui.press('enter')
     pyautogui.press('esc')
 
-    repeated_press('right', 7)
+    repeated_press('right', 3)
 
-    read_cell()
+    pyautogui.press('del')
 
 
 __main__()

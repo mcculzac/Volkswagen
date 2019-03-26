@@ -1,7 +1,7 @@
 #####################
 # Kevin Gu
 # gukailia@msu.edu
-# 2018-3-21
+# 2018-3-25
 #####################
 
 
@@ -18,18 +18,20 @@ import pyautogui
 # function defs
 ###############
 
-"""Given an partID, return the open amount"""
-def __main__():
+"""Given the partID, return the part name"""
 
+def __main__():
     open_file_on_desktop('ex_1')
     pyautogui.PAUSE = 0.1
+
+    goto_sheet('warehouse')
 
     pyautogui.hotkey('ctrl', 'f')
     pyautogui.hotkey('ctrl', 'v')
     pyautogui.press('enter')
     pyautogui.press('esc')
 
-    repeated_press('right', 7)
+    pyautogui.press('right')
 
     read_cell()
 
