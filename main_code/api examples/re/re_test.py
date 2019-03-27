@@ -1,9 +1,5 @@
 
 ###################
-# Zac McCullough
-# mccul157@msu.edu
-# 1/28
-###################
 
 """Technology demonstrator of regex"""
 
