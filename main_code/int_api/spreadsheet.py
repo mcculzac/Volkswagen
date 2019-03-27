@@ -103,7 +103,7 @@ def read_cell() -> str:
     log(pyautogui.hotkey, 'ctrl', 'c')
     log(pyautogui.hotkey, 'ctrl', 'f')
     log(pyautogui.hotkey, 'ctrl', 'v')
-    log(pyautogui.hotkey, 'ctrl', 'shift', 'left')
+    log(pyautogui.hotkey, 'ctrl', 'ctrl', 'a')
     log(pyautogui.hotkey, 'ctrl', 'c')
     log(pyautogui.press, 'esc')
     result = None
