@@ -165,9 +165,11 @@ def get_action(task):
 
     return action
 
+# Incomplete
 def add_label():
     '''label email appropriately'''
-
+    pass
+  
 def main():
     """Shows basic usage of the Gmail API.
     Lists the user's Gmail labels.
