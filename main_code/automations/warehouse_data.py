@@ -133,7 +133,7 @@ def finished():
 
 def main():
     # opening the file
-    open_file_on_desktop("ex_1.xlsx")
+    i.open_file_on_desktop("ex_1.xlsx")
 
     # create a new sheet to calculate the number of the items
     total_items = calculate_items()

@@ -14,11 +14,12 @@ data folder.
 #########
 
 import sys
+import ctypes
 import os
-import subprocess
+import threading
+import importlib.util
 from pywinauto.win32_hooks import Hook, KeyboardEvent, MouseEvent
 sys.path.append('../')
-from int_api import *
 
 
 ###############
@@ -92,16 +93,44 @@ def execute_auto(path: str) -> None:
                 else:
                     f.write(str(args.current_key) + ',')
 
-    hook = Hook()
-    hook.handler = on_event
-    hook.hook(keyboard=True, mouse=True)
-    hook.listen()
+    spec = importlib.util.spec_from_file_location("automationTask", script_path)
+    task = importlib.util.module_from_spec(spec)
 
-    subprocess.call(script_path)
+    def listen():
+        # set up hook
+        hook = Hook()
+        hook.handler = on_event
+        hook.hook(keyboard=True, mouse=True)
+
+        hook.listen()
+
+    def run_script():
+        spec.loader.exec_module(task)
+
+    # https://stackoverflow.com/questions/323972/is-there-any-way-to-kill-a-thread
+    def terminate_thread(thread):
+        """Terminates a python thread from another thread.
+
+        :param thread: a threading.Thread instance
+        """
+        if not thread.isAlive():
+            return
+
+        exc = ctypes.py_object(SystemExit)
+        res = ctypes.pythonapi.PyThreadState_SetAsyncExc(
+            ctypes.c_long(thread.ident), exc)
+        if res == 0:
+            raise ValueError("nonexistent thread id")
+
+    t = threading.Thread(target=listen)
+    t.start()
+    run_script()
+    terminate_thread(t)
+    print('end_all!')
 
 
 def __main__():
-    pass
+    execute_auto('warehouse_data.py')
 
 
 __main__()

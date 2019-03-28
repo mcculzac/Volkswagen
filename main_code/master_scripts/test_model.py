@@ -23,7 +23,7 @@ from int_api import *
 ###############
 
 def __main__():
-    print(__version__)
+    pass
 
 
 __main__()
