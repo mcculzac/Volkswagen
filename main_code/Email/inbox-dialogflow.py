@@ -11,6 +11,7 @@ import os.path
 from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
+import pyautogui
 
 
 import base64
@@ -18,8 +19,12 @@ import email
 import re
 from apiclient import errors
 
+import win32clipboard
 import dialogflow
 import os
+import sys
+sys.path.append('../automations')
+
 
 
 # Complete in DialogFlow
@@ -37,9 +42,9 @@ import os
 """Given the company name, delete everything about the company contact information""" # RemoveCompany auto_delete_company.py
 """Given the company name, delete the contact information""" # DeleteContact auto_delete_company_email.py
 
-
 # If modifying these scopes, delete the file token.pickle.
 SCOPES = ['https://www.googleapis.com/auth/gmail.readonly']
+
 
 def GetMessage(service, user_id, msg_id):
   """Get a Message with given ID.
@@ -137,16 +142,20 @@ def dialogflow_response(text):
 def put_value_in_clipboard(value):
     '''parameter identified for task
     no return. Put value in clipboard'''
-    pass
+    print('VALUE!: ', value)
+    win32clipboard.OpenClipboard()
+    win32clipboard.SetClipboardText(value)
+    win32clipboard.CloseClipboard()
 
 
-# Incomplete
 def take_action(action):
     '''execute task
     label (move) email upon task completion
     UnknownTask -> HumanAction
     All other tasks -> BotAction'''
-    pass
+    if action == "CheckOpenAmount":
+        import auto_check_open
+        pass#        check_open_amount()
 
 
 def get_action(task):
@@ -160,14 +169,19 @@ def get_action(task):
         param = True
         value = task_information[1]
 
+
+
     if param:
+        print(value)
         put_value_in_clipboard(value)
 
     return action
 
+# Incomplete
 def add_label():
     '''label email appropriately'''
-
+    pass
+  
 def main():
     """Shows basic usage of the Gmail API.
     Lists the user's Gmail labels.
@@ -202,19 +216,11 @@ def main():
     amountofemails = len(service.users().messages().list(userId='me').execute()['messages'])
 
 
-    count = 0
     # run through amount of emails in inbox
     for id in range(amountofemails):
-        count += 1
         emailidnum = service.users().messages().list(userId='me').execute()['messages'][id]['id']
         # returns dictionary. key = 'snippet'; vlaue = message
         message = GetMessage(service, 'me', emailidnum)['snippet']
-
-
-        # label testing - add a label to the first messgae
-        if count == 2:
-            add_label()
-
 
         task_name = dialogflow_response(message).strip()
         #print(task_name)
