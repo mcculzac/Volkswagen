@@ -1,7 +1,7 @@
 # Storyboard
 
 # Timeline
-1. Intro describing VW, what they do, history etc.  Maybe have VW stock footage?
+1. Intro describing VW, what they do, history etc.  Maybe have VW stock footage? 30s
 1. Problem statement somehow
 
 ## Scene List:
@@ -25,6 +25,7 @@
 ## General Ideas
 * Bar at bottom during demo phase that shows what the bot is doing
   * We have the bot running on the main screen, but then at the bottom there is a bar, where it's sort of like a timeline where you can see what exactly the bot is doing from moment to moment, and maybe some like pause, rewind, explanation action type deal.  
+* the clock spinning really fast
 
 
 
