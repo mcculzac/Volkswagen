@@ -1,5 +1,8 @@
 # Storyboard
 
+# Timeline
+1. Intro describing VW, what they do, history etc.  Maybe have VW stock footage?
+1. Problem statement somehow
 
 ## Scene List:
 * Bot performing
