@@ -36,6 +36,9 @@ Our project is built on python under windows environment. In order to run the sc
 ##Training the model 
 
 ##How the process flow
-input a task ID and with some necessary information. The bot will apply different model to work on the task.
+1. Parsing the email
+2. Identify the task ID and extract the useful information
+3. input tje task ID and with necessary information. 
+4. The bot will apply different model to work on the task.
 .....
   
