@@ -32,3 +32,10 @@ Our project is built on python under windows environment. In order to run the sc
 
 ## System Arc
 ![alt text](https://raw.githubusercontent.com/mcculzac/Volkswagen/kg_doc/Resources/Untitled.png)
+
+##Training the model 
+
+##How the process flow
+input a task ID and with some necessary information. The bot will apply different model to work on the task.
+.....
+  
