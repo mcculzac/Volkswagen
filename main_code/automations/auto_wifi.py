@@ -1,7 +1,7 @@
 #####################
 # Kevin Gu
 # gukailia@msu.edu
-# 2018-3-21
+# 2018-4-15
 #####################
 
 
@@ -10,26 +10,30 @@
 ##################
 
 import sys
+
 sys.path.append('../')
 from int_api import *
 import pyautogui
+
 
 ###############
 # function defs
 ###############
 
-"""Given an partID, return the open amount"""
-def __main__():
+""""Given Company's name, return the partID they provide """
 
-    open_file_on_desktop('ex_1')
+
+def __main__():
+    open_file_on_desktop('wifi_password')
     pyautogui.PAUSE = 0.1
+
 
     pyautogui.hotkey('ctrl', 'f')
     pyautogui.hotkey('ctrl', 'v')
     pyautogui.press('enter')
     pyautogui.press('esc')
 
-    repeated_press('right', 7)
+    pyautogui.press('right')
 
     read_cell()
 
