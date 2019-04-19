@@ -60,7 +60,7 @@ By running the script generate_ml_data, every click will be recorded and store i
 
 
 ## Authors
-* [Amelia Wilson](https://github.com/KailiangGu) - *NPL* 
+* [Amelia Wilson](https://github.com/ameliawilson) - *NPL* 
 * [Fynn Reckhorn]() - *GmailAPI*
 * [Kevin Gu](https://github.com/KailiangGu) - *Data*
 * [Maryam Irannejad Najafabadi](https://github.com/Irannejad) - *NPL*
