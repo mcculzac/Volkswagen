@@ -47,6 +47,7 @@ Our project is built on python under windows environment. In order to run the sc
 .....
 
 ## How Dialogflow works
+Dialogflow is a Google service.
 
 ## Training the model
 Currently we are automating some simple tasks to generate the data for training the model. All the automation samples are located in the *automations* folder.
