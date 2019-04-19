@@ -33,12 +33,40 @@ Our project is built on python under windows environment. In order to run the sc
 ## System Arc
 ![alt text](https://raw.githubusercontent.com/mcculzac/Volkswagen/kg_doc/Resources/Untitled.png)
 
-##Training the model 
 
-##How the process flow
-1. Parsing the email
-2. Identify the task ID and extract the useful information
-3. input tje task ID and with necessary information. 
-4. The bot will apply different model to work on the task.
+
+## How the process flow
+1. Parsing the email will Dialogflow.
+
+        python3.6 whatever file does it
+2. Identify the task ID and extract the useful information.
+3. Input the task ID and with necessary information to the python script. 
+4. The bot will apply different models to work on the different tasks.
+        
+        python3.6 whatever file does it
 .....
-  
+
+## How Dialogflow works
+
+## Training the model
+Currently we are automating some simple tasks to generate the data for training the model. All the automation samples are located in the *automations* folder.
+
+By running the script generate_ml_data, every click will be recorded and store in a cvs file.
+
+    python3.6 main_code/ML_Train+Gen_Data/generate_ml_data
+       
+*Need explain how we use the data we recorded to train the modle* 
+
+
+## Authors
+* [Amelia Wilson](https://github.com/KailiangGu) - *NPL* 
+* [Fynn Reckhorn]() - *GmailAPI*
+* [Kevin Gu](https://github.com/KailiangGu) - *Data*
+* [Maryam Irannejad Najafabadi](https://github.com/Irannejad) - *NPL*
+* [Zachary McCullough](https://github.com/mcculzac) - *ML Model*
+
+
+
+
+## Acknowledgments 
+
