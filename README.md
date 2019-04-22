@@ -36,6 +36,10 @@ Our project is built on python under windows environment. In order to run the sc
 ##Training the model 
 
 ##How the process flow
-input a task ID and with some necessary information. The bot will apply different model to work on the task.
-.....
-  
+
+
+##How Dialogflow works
+Dialogflow lets the user build conversational interfaces by providing a powerful natural language understanding (NLU) engine. In Dialogflow, a user can create agents (NLU modules) that are able to understand human language and translate it to standard and structured meaning that other apps and services can understand.
+
+In this project, an agent is created that includes an intent for each different task related to emails in the inbox. In each intent, some examples of what an email can say are provided in order to match a particular intent. However, there is no need to define every possible example of what an email might say because of Dialogflow's built-in machine learning, which naturally expands training phrases to other similar emails. The agent parses each email and if the intent of an email matches an intent within the agent, it outputs the task related to that email and the information that the softbot will need to handle that task.
+
