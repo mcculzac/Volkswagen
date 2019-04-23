@@ -41,16 +41,19 @@ Our project is built on python under windows environment. In order to run the sc
 ## How the process flow
 1. Parsing the email will Dialogflow.
 
-        python3.6 whatever file does it
+        python3.6 main_code/Parsing_email/quickstart.py
 2. Identify the task ID and extract the useful information.
 3. Input the task ID and with necessary information to the python script. 
 4. The bot will apply different models to work on the different tasks.
         
-        python3.6 whatever file does it
-.....
+        python3.6 main_code/Email/inbox-dialogflow.py
+
 
 ## How Dialogflow works
-Dialogflow is a Google service.
+Dialogflow lets the user build conversational interfaces by providing a powerful natural language understanding (NLU) engine. In Dialogflow, a user can create agents (NLU modules) that are able to understand human language and translate it to standard and structured meaning that other apps and services can understand.
+
+In this project, an agent is created that includes an intent for each different task related to emails in the inbox. In each intent, some examples of what an email can say are provided in order to match a particular intent. However, there is no need to define every possible example of what an email might say because of Dialogflow's built-in machine learning, which naturally expands training phrases to other similar emails. The agent parses each email and if the intent of an email matches an intent within the agent, it outputs the task related to that email and the information that the softbot will need to handle that task.
+
 
 ## Training the model
 Currently we are automating some simple tasks to generate the data for training the model. All the automation samples are located in the *automations* folder.
@@ -71,14 +74,9 @@ By running the script generate_ml_data, every click will be recorded and store i
 
 
 
-## Acknowledgments 
-=======
-## How the process flow
 
 
-## How Dialogflow works
-Dialogflow lets the user build conversational interfaces by providing a powerful natural language understanding (NLU) engine. In Dialogflow, a user can create agents (NLU modules) that are able to understand human language and translate it to standard and structured meaning that other apps and services can understand.
 
-In this project, an agent is created that includes an intent for each different task related to emails in the inbox. In each intent, some examples of what an email can say are provided in order to match a particular intent. However, there is no need to define every possible example of what an email might say because of Dialogflow's built-in machine learning, which naturally expands training phrases to other similar emails. The agent parses each email and if the intent of an email matches an intent within the agent, it outputs the task related to that email and the information that the softbot will need to handle that task.
+
 
 
