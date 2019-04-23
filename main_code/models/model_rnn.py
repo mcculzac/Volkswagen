@@ -13,7 +13,6 @@ RNN Model capable of taking in parameters of training parameters
 #########
 
 
-import numpy as np
 from keras.models import Sequential
 from keras.layers import Dense
 from keras.layers import LSTM
@@ -58,27 +57,13 @@ def train_model_normal(batch_size, epos, x_train, y_train, x_test, y_test):
 
 def __main__():
 
-    data_input = 'data'
+    data_input = 'auto_check_open'
     data_input = '../data/ml_data/' + data_input
 
     x_train = np.loadtxt(data_input + '_xtr.csv', delimiter=',')
     y_train = np.loadtxt(data_input + '_ytr.csv', delimiter=',')
     x_test = np.loadtxt(data_input + '_xte.csv', delimiter=',')
     y_test = np.loadtxt(data_input + '_yte.csv', delimiter=',')
-
-    # load data in
-    # with open(data_input+'_xtr.csv', 'r') as f:
-    #     r = csv.reader(f, delimiter=',')
-    #     x_train = [row for row in r]
-    # with open(data_input+'_xte.csv', 'r') as f:
-    #     r = csv.reader(f, delimiter=',')
-    #     x_test = [row for row in r]
-    # with open(data_input+'_ytr.csv', 'r') as f:
-    #     r = csv.reader(f, delimiter=',')
-    #     y_train = [row for row in r]
-    # with open(data_input+'_yte.csv', 'r') as f:
-    #     r = csv.reader(f, delimiter=',')
-    #     y_test = [row for row in r]
 
     x_train, x_test, y_train, y_test = np.array(x_train), np.array(x_test), np.array(y_train), np.array(y_test)
     x_train = np.reshape(x_train, (len(x_train), len(x_train[0]), 1))
@@ -87,11 +72,11 @@ def __main__():
     print(x_train)
 
     batch_size = len(x_train)
-    epochs = 10000
+    epochs = 20000
 
     # train the model use the training data
-    model = train_model_normal(batch_size, epochs, x_train, y_train, x_train, y_train)
-    model.save("../ML/rnnModel.h5")
+    model = train_model_normal(batch_size, epochs, x_train, y_train, x_test, y_test)
+    model.save("../ML/auto_check_open.h5")
 
 
 __main__()

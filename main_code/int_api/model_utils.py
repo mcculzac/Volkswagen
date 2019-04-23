@@ -30,3 +30,15 @@ def generate_char_to_int_dict(data: t.List[str]) -> t.Dict[str, int]:
     return {x: i for i, x in enumerate(temp)}
 
 
+def convert_pywinauto_pyautogui(key: str) -> str:
+    """
+    Takes in a pywinauto key and converts it to a pyautogui key
+    :param key: string
+    :return: string
+    """
+    replaces = [('Lwin', 'win'), ('Lalt', 'alt'), ('Rwin', 'win'), ('Oem_Minus', '-'), ('Lcontrol', 'ctrl'),
+                ('Rcontrol', 'ctrl'), ('Lshift', 'shift')]
+    for char in replaces:
+        if char[0] == key:
+            return char[1]
+    return key

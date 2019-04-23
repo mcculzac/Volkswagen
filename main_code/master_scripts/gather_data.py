@@ -130,7 +130,7 @@ def execute_auto(path: str) -> None:
 
 
 def __main__():
-    execute_auto('warehouse_data.py')
+    execute_auto('auto_check_open.py')
 
 
 __main__()
