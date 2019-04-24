@@ -39,7 +39,7 @@ Our project is built on python under windows environment. In order to run the sc
 
 
 ## How the process flow
-1. Parsing the email will Dialogflow.
+1. Parsing the email with Dialogflow.
 
         python3.6 main_code/Parsing_email/quickstart.py
 2. Identify the task ID and extract the useful information.
@@ -64,7 +64,7 @@ And by running the script clean_data, it will clean up the unclean data.
     python3.6 main_code/master_scripts/gather_data.py
     python3.6 main_code/master_scripts/clean_data.py
        
-Once we have a clean data, then we can run the script model_rnn.py to train a model.
+Once we have clean data, then we can run the script model_rnn.py to train a model.
 
     python3.6 main_code/models/model_rnn.py
 
@@ -78,7 +78,7 @@ With the model we trained, we can run it and test it with scripts run_model.py a
 
 ## Authors
 * [Amelia Wilson](https://github.com/ameliawilson) - *NPL* 
-* [Fynn Reckhorn]() - *GmailAPI*
+* [Fynn Reckhorn](https://github.com/freckhorn) - *GmailAPI*
 * [Kevin Gu](https://github.com/KailiangGu) - *Data*
 * [Maryam Irannejad Najafabadi](https://github.com/Irannejad) - *NPL*
 * [Zachary McCullough](https://github.com/mcculzac) - *ML Model*
