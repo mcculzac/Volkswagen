@@ -31,7 +31,7 @@ Our project is built on python under windows environment. In order to run the sc
     
 
 ## System Arc
-![alt text](https://raw.githubusercontent.com/mcculzac/Volkswagen/kg_doc/Resources/Untitled.png)
+![alt text](https://raw.githubusercontent.com/mcculzac/Volkswagen/master/Resources/Untitled.png)
 
 
 
